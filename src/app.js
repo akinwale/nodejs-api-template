@@ -2,6 +2,7 @@
 
 // API boilerplate
 const express = require('express');
+
 const app = express();
 
 // Logging
@@ -9,16 +10,16 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const fs = require('fs');
 const FileStreamRotator = require('file-stream-rotator');
+
 const logDirectory = `${__dirname}/log`;
 
 // Config
 const config = require('config');
+const mongoose = require('mongoose');
 const routes = require('./routes');
 
 // Mongoose and models
-const mongoose = require('mongoose');
 mongoose.connect(config.mongoUri, { useNewUrlParser: true });
-const models = require('./models');
 
 // BodyParser allows us to get data out of URLs
 app.use(bodyParser.urlencoded({ extended: true }));

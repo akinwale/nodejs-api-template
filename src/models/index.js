@@ -1,3 +1,5 @@
+const Thing = require('./Thing');
+
 module.exports = {
-    Thing: require('./Thing')
+  Thing,
 };
