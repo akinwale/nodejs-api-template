@@ -1,13 +1,11 @@
-'use strict';
+const errors = require('./errors.js');
 
-let errors = require('./errors.js');
-
-exports.findAll = (req, res, next) => {
+exports.findAll = (req, res) => {
   // Simulate task list, normally this would be retrieved from a database
-  let tasks = [
-    {'_id': 1, 'name': 'milk'},
-    {'_id': 2, 'name': 'cheese'},
-    {'_id': 3, 'name': 'milk'}
+  const tasks = [
+    { _id: 1, name: 'milk' },
+    { _id: 2, name: 'cheese' },
+    { _id: 3, name: 'milk' },
   ];
 
   res.json(tasks);

@@ -1,16 +1,16 @@
-'use strict';
+
 
 process.env.NODE_ENV = 'test';
 
-let chai = require('chai');
-let chaiHttp = require('chai-http');
-let should = chai.should();
-let server = require('../server');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+
+const should = chai.should();
+const server = require('../src/app');
 
 chai.use(chaiHttp);
 
 describe('Tasks', () => {
-
   describe('GET /tasks', () => {
     it('lists all tasks', (done) => {
       chai.request(server)
@@ -36,5 +36,4 @@ describe('Tasks', () => {
         });
     });
   });
-
 });
