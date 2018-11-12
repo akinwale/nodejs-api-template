@@ -19,6 +19,8 @@
     "file-stream-rotator": "0.0.7",
     "mongoose": "^5.3.11",
     "morgan": "^1.7.0",
+    "mysql": "^2.16.0",
+    "sequelize": "^4.41.2",
     "superagent": "^3.8.3",
     "superagent-bluebird-promise": "^4.2.0",
     "ws": "^6.1.0"
