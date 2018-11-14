@@ -1,5 +1,3 @@
-
-
 // API boilerplate
 const express = require('express');
 
@@ -15,11 +13,13 @@ const logDirectory = `${__dirname}/log`;
 
 // Config
 const config = require('config');
-const mongoose = require('mongoose');
 const routes = require('./routes');
 
-// Mongoose and models
-mongoose.connect(config.mongoUri, { useNewUrlParser: true });
+// Sequelize models
+const db = require('./models');
+db.sequelize.sync();
+
+const Task = require('./models').Task;
 
 // BodyParser allows us to get data out of URLs
 app.use(bodyParser.urlencoded({ extended: true }));
