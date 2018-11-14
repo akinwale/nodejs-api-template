@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: db
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'secret'
+    ports:
+      - "3306:3306"
+  application:
+    build: ./nodejs-api-template
+    depends_on: [db]
+    links:
+      - db
+    ports:
+      - "8080:8080"
