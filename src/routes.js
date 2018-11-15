@@ -8,8 +8,11 @@ router.use(middleware.doSomethingInteresting);
 // Tasks
 const tasks = require('./controllers/tasks');
 
-router.get('/tasks', tasks.findAll);
-router.post('/buggyroute', tasks.buggyRoute);
+router.get('/tasks', tasks.getTasks);
+router.post('/tasks', tasks.create);
+router.put('/tasks/:taskId', tasks.update);
+router.get('/tasks/:taskId', tasks.getTaskById);
+router.delete('/tasks/:taskId', tasks.deleteTask);
 
 // Error Handling
 const errors = require('./controllers/errors');

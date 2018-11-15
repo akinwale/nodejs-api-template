@@ -19,8 +19,6 @@ const routes = require('./routes');
 const db = require('./models');
 db.sequelize.sync();
 
-const Task = require('./models').Task;
-
 // BodyParser allows us to get data out of URLs
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
